@@ -12,7 +12,6 @@ running = True
 trail = []
 spawnObjects = []
 prevKey = None
-pressed = [0, 0, 0, 0]
 
 
 class Head:
