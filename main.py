@@ -5,6 +5,7 @@ import pygame
 pygame.init()
 windows_width, windows_height = 500, 500
 display = pygame.display.set_mode((windows_width, windows_height))
+pygame.display.set_caption('Snake Game')
 font = pygame.font.SysFont("Calibri", 15)
 scoretext = font.render("Score: 0", 1, (255, 255, 255))
 
