@@ -2,12 +2,17 @@ import math
 import random
 import pygame
 
+pygame.init()
 windows_width, windows_height = 500, 500
 display = pygame.display.set_mode((windows_width, windows_height))
+font = pygame.font.SysFont("Calibri", 15)
+scoretext = font.render("Score: 0", 1, (255, 255, 255))
+
 x, y = 50, 50
 oldX, oldY = 50, 50
 maxLen = 20
 t = 0
+score = 0
 running = True
 trail = []
 spawnObjects = []
@@ -81,6 +86,9 @@ while running:
         i.draw(display, (255, 0, 0))
         if dist(x, y, i.x, i.y) <= 15:
             spawnObjects.remove(i)
+            score += 1
+            scoretext = font.render(f"Score: {score}", 1, (255, 255, 255))
             maxLen += 10
     head.draw(display, (127, 255, 0))
+    display.blit(scoretext, (0, 0))
     pygame.display.flip()
